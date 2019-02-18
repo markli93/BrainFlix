@@ -22,7 +22,7 @@ class Mainvideocomment extends Component{
     render(){
         return(
             <div className ="mainvidoe__comment--container">
-                <img className='mohan__picture' src="Assets/Images/Mohan-muruge.jpg" alt="photo"/>
+                <img className='mohan__picture' src="Assets/Images/Mohan-muruge.jpg" alt="mohan"/>
                 <div className = 'mainvideo__comment'>
                     <div className='mainvideo__comment__title'>
                         <p>{this.props.name}</p>

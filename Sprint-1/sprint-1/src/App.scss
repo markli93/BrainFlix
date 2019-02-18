@@ -2,9 +2,15 @@
 $Black:#323232;
 $Mercury:#AFAFAF;
 $Brainﬂix-blue-light:#0095FF;
+$Brainflix-blue-dark:#0065AD;
 $White:#FFFFFF;
 $Tablet: 768px;
 $Desktop : 1440px;
+
+@mixin subheader__font {
+  font-size: 14px;
+  line-height: 22px;  
+}
 
 *{
   margin: 0;
@@ -16,8 +22,7 @@ $Desktop : 1440px;
   line-height: 18px;
 
   @media (min-width:$Tablet) {
-    font-size: 14px;
-    line-height: 22px;  
+    @include subheader__font();
   }
 }
 .navbar{
@@ -27,7 +32,7 @@ $Desktop : 1440px;
     display: flex;
     height: 80px;
     align-items: center;
-    margin:0px 0px 8px 16px;
+    margin:0px 0px 8px 24px;
   }
 
   
@@ -79,11 +84,12 @@ form{
   margin-right: 16px;  
 
   @media (min-width:$Tablet) {
-    width: 40%;
+    width: 50%;
   }
 }
 .navbar__button{
-  width: 70%;
+  @include subheader__font();
+  width: 75%;
   height: 48px;
   margin: 0px 16px;
   background-color:$Brainﬂix-blue-light;
@@ -92,9 +98,12 @@ form{
   background-repeat: no-repeat;
   background-position: 25%;
   color: $White;
-  font-size: 14px;
-  line-height: 22px;
   font-weight: bold;
+  padding-top: 4px;
+
+  &:hover{
+    background-color: $Brainflix-blue-dark;
+  }
 
   @media (min-width:$Tablet) {
     margin: 0px 24px 0px 0px;
@@ -179,7 +188,7 @@ form{
     }
   .mainvideo__progressbar--container{
       height: 20%;
-      width: 80%;
+      width: 100%;
       background: $Black;
       border-radius: 4px;
       display: flex;
@@ -275,6 +284,10 @@ h1{
 .mainvideo__description--container{
   margin: 0px 16px;
 
+  @media (min-width:$Tablet) {
+    margin: 0px 24px;
+  }
+
   @media (min-width:$Desktop) {
     margin-left: 180px;
     width: 50%;
@@ -290,21 +303,23 @@ h1{
   }
 }
 .mainvideo__channel--contianer{
+  @include subheader__font();
   display: flex;
-  font-size: 14px;
-  line-height: 22px;
   margin-bottom: 32px;
 
   @media (min-width:$Tablet) {
     margin: 0px;
   }
 
-
   h2{
+    @include subheader__font();
     margin-right: 8px;
-    font-size: 14px;
-    line-height: 22px;
     font-weight: bold;
+
+    @media (min-width:$Tablet) {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
   .mainvideo__date{
     color: $Mercury;
@@ -315,7 +330,7 @@ h1{
   display: flex;
   align-items: center;
   padding-bottom: 24px;
-  border-bottom: silver solid 1px;
+  border-bottom: $Mercury solid 1px;
   margin-bottom: 24px;
 
   
@@ -330,8 +345,7 @@ h1{
   }
 
   p{
-    font-size: 14px;
-    line-height: 22px;
+    @include subheader__font();
     margin-right: 32px; 
   }
 }
@@ -345,14 +359,17 @@ h1{
 .mainvideo__form--container{
   margin: 0px 16px;
 
+  @media (min-width:$Tablet) {
+    margin: 0px 24px;
+  }
+
   @media (min-width:$Desktop) {
     margin-left: 180px;
     width: 50%;
   }
 
   h2{
-    font-size: 14px;
-    line-height: 22px;
+    @include subheader__font();
     font-weight: bold;
     margin-bottom: 32px;
 
@@ -418,11 +435,15 @@ h1{
    }
   }
   button{
-    background-color:#0095FF;
+    background-color:$Brainﬂix-blue-light;
     height: 48px;
     color: white;
     border-radius: 4px;
     margin-bottom: 24px;
+
+    &:hover{
+      background: $Brainflix-blue-dark;
+    }
 
     @media (min-width:$Tablet) {
       width: 160px;
@@ -470,6 +491,10 @@ h1{
 .sidevideolist--container{
   margin: 0px 16px;
 
+    @media (min-width:$Tablet) {
+    margin: 0px 24px;
+    }
+
     @media (min-width:$Desktop) {
       position: absolute;
       right: 20px;
@@ -477,11 +502,15 @@ h1{
     }
 
   .sidevideolist__title{
+    @include subheader__font();
     padding: 40px 0px;
     color: $Mercury;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 22px;
+
+    @media (min-width:$Tablet) {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 }
 .sidevideo--container{

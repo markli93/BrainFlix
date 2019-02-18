@@ -6,13 +6,13 @@ class Navbar extends Component{
             <header>
                 <nav className="navbar">
                     <div className="navbar__logo--container">
-                        <a href="#"> <img src="Assets/Logo/Logo-brainflix.svg" className="navbar__logo" alt="Band Logo"/></a>
+                        <img src="Assets/Logo/Logo-brainflix.svg" className="navbar__logo" alt="Band Logo"/>
                     </div>
                     <form>
                         <input placeholder="Search" type="text" className ="navbar__input"/>
                         <div className="navbar__button--container">
                             <button className="navbar__button">UPLOAD</button> 
-                            <img className= 'mohan__picture'src="Assets/Images/Mohan-muruge.jpg" alt="photo"/>
+                            <img className= 'mohan__picture'src="Assets/Images/Mohan-muruge.jpg" alt="mohan"/>
                         </div> 
                     </form>
                 </nav>
