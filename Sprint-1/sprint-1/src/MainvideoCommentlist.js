@@ -27,13 +27,7 @@ class MainvideoCommentlist extends Component{
                 })
             }
         </div>
-       
-
-        // return(
-        //     <div>
-        //         {mainvideocomment}
-        //     </div>
-        // )
+        
         ) 
     }
 }
