@@ -9,7 +9,7 @@ class MainvideoCommentlist extends Component{
         <div className='mainvideo__form--container'>
             <h2>{mainvideocomment.length} Comments</h2>
             <form className ='mainvideo__form'>
-                <img className ="mohan__picture" src="Assets/Images/Mohan-muruge.jpg" alt="mohan"/>
+                <img className ="mohan__picture" src="Assets/Images/cool.jpg" alt="mohan"/>
                 <div className ='maivideo__input--container'>
                     <div className ='mainvideo__input'>
                         <label>JOIN THE CONVERSATION</label>

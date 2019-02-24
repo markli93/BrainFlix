@@ -14,7 +14,7 @@ class Navbar extends Component{
                             <Link to={'/upload'} className="navbar__upload__link">
                                 <button className="navbar__button">UPLOAD</button>
                             </Link>
-                            <img className= 'mohan__picture'src="Assets/Images/Mohan-muruge.jpg" alt="mohan"/>
+                            <img className= 'mohan__picture'src="Assets/Images/sushi.jpg" alt="mohan"/>
                         </div> 
                     </form>
                 </nav>

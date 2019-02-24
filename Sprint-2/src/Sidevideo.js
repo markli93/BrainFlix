@@ -5,12 +5,16 @@ class Sidevideo extends Component{
         return(
             <div className='sidevideo--container' >
                 <Link to={"/"+ this.props.id}>
-                <img src={this.props.image} alt=''></img>
+                    <img src={this.props.image} alt=''></img>
                 </Link>
-                <div>
-                    <h3>{this.props.title}</h3>
-                    <p>{this.props.channel}</p>
-                </div>
+                    <div>
+                        <Link to={"/"+ this.props.id}>
+                            <h3>{this.props.title}</h3>
+                        </Link>
+                        <Link to={"/"+ this.props.id}>
+                            <p>{this.props.channel}</p>
+                        </Link>
+                    </div>
             </div>
         )
     }

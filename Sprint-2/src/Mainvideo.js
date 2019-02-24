@@ -12,29 +12,40 @@ class Mainvideo extends Component{
 
     componentDidMount() {
 
-        axios.get('https://project-2-api.herokuapp.com/videos/?api_key=mark')
-        .then(response =>  {
+       let sidevidPromise = axios.get('https://project-2-api.herokuapp.com/videos/?api_key=mark')
+        sidevidPromise.then(response =>  {
             this.setState({
                 sidevideo: response.data
             });
+        });
+
+        sidevidPromise.catch(error=>{
+            console.log(error);
         }); 
 
-        axios.get(`https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=mark`)
-        .then(response =>  {
+       let mainvidPromise = axios.get(`https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=mark`)
+        mainvidPromise.then(response =>  {
             this.setState({
                 mainvid: response.data
-            });
-        });    
+            })
+        });
+
+        mainvidPromise.catch(error=>{
+            console.log(error);
+        }); 
     }
 
     componentDidUpdate(){
         if(this.state.mainvid.id !== this.props.match.params.id){
-        axios.get(`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=mark`)
-        .then(response =>  {
-            this.setState({
-                mainvid: response.data 
-            });
-        });
+            let mainvidPromise = axios.get(`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=mark`)
+                mainvidPromise.then(response =>  {
+                    this.setState({
+                        mainvid: response.data 
+                    })
+                });
+                mainvidPromise.catch(error=>{
+                    console.log(error);
+                }); 
     }
     }
     
