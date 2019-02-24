@@ -52,20 +52,19 @@ class Mainvideo extends Component{
     render(){
         return(
             <div>
-                
-            <Mainvideoplayer
-              image = {this.state.mainvid.image}
-            />
-            <MainvidDescription
-                title = {this.state.mainvid.title}
-                channel = {this.state.mainvid.channel}
-                date = {this.state.mainvid.timestamp}
-                views = {this.state.mainvid.views}
-                likes = {this.state.mainvid.likes}
-                description = {this.state.mainvid.description}
-            />
-            <MainvideoCommentlist mainvid ={this.state.mainvid}/>            
-            <Sidevideolist sidevid={this.state.sidevideo}  mainvid ={this.state.mainvid}/>
+                <Mainvideoplayer
+                image = {this.state.mainvid.image}
+                />
+                <MainvidDescription
+                    title = {this.state.mainvid.title}
+                    channel = {this.state.mainvid.channel}
+                    date = {this.state.mainvid.timestamp}
+                    views = {this.state.mainvid.views}
+                    likes = {this.state.mainvid.likes}
+                    description = {this.state.mainvid.description}
+                />
+                <MainvideoCommentlist mainvid ={this.state.mainvid} submitHandler={this.addComment}/>            
+                <Sidevideolist sidevid={this.state.sidevideo}  mainvid ={this.state.mainvid}/>
             </div>
         );
     }
