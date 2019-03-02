@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const sidevidData = require('../data/VideoData');
+const uuidv4 = require('uuid/v4')
 
 
-
-router.get('/video',(req,res)=>{
+router.get('/video', (req, res) => {
     res.json(sidevidData);
 })
 
@@ -13,20 +13,18 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/video', (req, res) => {
-    const newVideo = 
-    {
-        "id":'1234566667898',
+    const newVideo = {
+        "id": uuidv4(),
         "title": req.body.title,
-        "channel": "Red Cow",
-        "image": "https://i.imgur.com/l2Xfgpl.jpg",
+        "channel": "Gundam World",
+        "image": "https://images.unsplash.com/photo-1543955946-8d33e764d8f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
         "description": req.body.description,
         "views": "1,001,023",
         "likes": "110,985",
         "duration": "4:01",
         "video": "https://project-2-api.herokuapp.com/stream",
         "timestamp": 1545162149000,
-        "comments": [
-            {
+        "comments": [{
                 "name": "Micheal Lyons",
                 "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
                 "id": "1ab6d9f6-da38-456e-9b09-ab0acd9ce818",

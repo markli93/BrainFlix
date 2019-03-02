@@ -5,7 +5,6 @@ import Navbar from './Navbar.js';
 import Mainvideo from './Mainvideo';
 import Uploadvideo from './Uploadvideo';
 class App extends Component {
- 
   render() {
     return (
       <Router>
@@ -19,7 +18,6 @@ class App extends Component {
          
         </div>
          </Router>
-     
     );
   }
 }

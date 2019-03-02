@@ -609,7 +609,7 @@ h1{
 
   @media (min-width:$Desktop) {
     margin: 40px 24px 8px 0px;
-    height: 245px;
+    height: 335px;
   }
 }
 .upload__title--container{
@@ -676,13 +676,14 @@ h1{
 
   @media (min-width:$Tablet) {
     flex-direction: row-reverse;
-    margin: 0px 24px;
+    margin: 0px;
     border-top: 1px solid $Mercury;
     padding-top: 40px;
   }
 
   @media (min-width:$Desktop) {
-    margin: 0px 180px;
+    border: none;
+    margin: 0px;
   }
 
   .upload__button__publish{

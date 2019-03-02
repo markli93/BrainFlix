@@ -6,15 +6,19 @@ export default class Uploadvideo extends React.Component{
 
     addVideo = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8080/video', { 
-            "title": event.target.title.value,
-            "description":event.target.description.value,
-           })
-        
-        this.props.history.push('/')
+        if(event.target.title.value !== '' && event.target.description.value !== ''){
+            axios.post('http://localhost:8080/video', { 
+                "title": event.target.title.value,
+                "description":event.target.description.value,
+               })
+            this.props.history.push('/');
+        }
+     }
 
-        
-      }
+     cancelSubmit = (event) => {
+        event.preventDefault();
+        window.location.reload();
+     }
    render(){
         return(
             <div>
@@ -24,7 +28,7 @@ export default class Uploadvideo extends React.Component{
                         <label>VIDEO THUMBNAIL</label>
                         <img src='Assets/Images/Upload-video-preview.jpg' alt='upload'/>
                     </div>
-                    <form className='upload__form' onSubmit= {this.addVideo} >
+                    <form className='upload__form' onSubmit= {this.addVideo}>
                         <div className='upload__title--container'>
                             <label>TITLE YOUR VIDEO</label>
                             <input name='title' placeholder='Add a title to your video'/>
@@ -35,11 +39,10 @@ export default class Uploadvideo extends React.Component{
                         </div>
                         <div className='upload__button--container'>
                             <button type='submit' className='upload__button__publish'>PUBLISH</button>
-                            <button className='upload__button__cancel'>CANCEL</button>
+                            <button  onClick = {this.cancelSubmit} type='click' className='upload__button__cancel'>CANCEL</button>
                         </div>
                     </form>
-                </div>
-                   
+                </div>      
             </div>
         )
     }
