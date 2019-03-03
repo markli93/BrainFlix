@@ -11,7 +11,7 @@ class Mainvideo extends Component {
         sidevideo: []
     }
     componentDidMount() {
-        let sidevidPromise = axios.get('http://localhost:8080/video')
+        let sidevidPromise = axios.get('http://localhost:8080/videos')
         sidevidPromise.then(response => {
             this.setState({
                 sidevideo: response.data
@@ -21,7 +21,7 @@ class Mainvideo extends Component {
             console.log(error);
         });
 
-        let mainvidPromise = axios.get(`http://localhost:8080/${this.props.match.params.id}`)
+        let mainvidPromise = axios.get(`http://localhost:8080/videos/${this.props.match.params.id}`)
         mainvidPromise.then(response => {
             this.setState({
                 mainvid: response.data
@@ -36,7 +36,7 @@ class Mainvideo extends Component {
         this._isMounted = true;
 
         if (this.state.mainvid.id !== this.props.match.params.id) {
-            axios.get(`http://localhost:8080/${this.props.match.params.id}`)
+            axios.get(`http://localhost:8080/videos/${this.props.match.params.id}`)
                 .then(response => {
                     this.setState({
                         mainvid: response.data
@@ -48,7 +48,7 @@ class Mainvideo extends Component {
         }
 
 
-        axios.get(`http://localhost:8080/video`)
+        axios.get(`http://localhost:8080/videos`)
             .then(response => {
                 if (this._isMounted) {
                     this.setState({

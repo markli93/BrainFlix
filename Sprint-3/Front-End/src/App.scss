@@ -246,6 +246,7 @@ form{
     justify-content: center;
     align-items: center;
     border-radius: 4px;
+    border-color: $Black;
 
     @media (min-width:$Tablet) {
       width: 10%;
@@ -266,6 +267,7 @@ form{
     align-items: center;
     border-radius: 4px;
     margin-right: 16px;
+    border-color: $Black;
 
     @media (min-width:$Tablet) {
       width: 10%;

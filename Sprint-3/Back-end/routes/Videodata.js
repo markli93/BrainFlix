@@ -2,17 +2,34 @@ const router = require('express').Router();
 const sidevidData = require('../data/VideoData');
 const uuidv4 = require('uuid/v4')
 
+function getdates() {
+    let dateinput = new Date();
+    let day = dateinput.getDate();
+    let month = dateinput.getMonth()+1; 
+    let year = dateinput.getFullYear();
+    
+    if(day<10) {
+        day='0'+day;
+    } 
 
-router.get('/video', (req, res) => {
+    if(month<10) {
+        month='0'+month;
+    } 
+
+dateinput = month+'/'+day+'/'+year;
+return dateinput;
+}
+
+router.get('/videos', (req, res) => {
     res.json(sidevidData);
 })
 
-router.get('/:id', (req, res) => {
+router.get('/videos/:id', (req, res) => {
     res.json(sidevidData.find(sidevid => sidevid.id === req.params.id));
 });
 
 
-router.post('/video', (req, res) => {
+router.post('/videos', (req, res) => {
     const newVideo = {
         "id": uuidv4(),
         "title": req.body.title,
@@ -23,7 +40,7 @@ router.post('/video', (req, res) => {
         "likes": "110,985",
         "duration": "4:01",
         "video": "https://project-2-api.herokuapp.com/stream",
-        "timestamp": 1545162149000,
+        "timestamp": getdates(),
         "comments": [{
                 "name": "Micheal Lyons",
                 "comment": "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
@@ -47,7 +64,7 @@ router.post('/video', (req, res) => {
             }
         ]
     }
-    sidevidData.push(newVideo);
+    sidevidData.unshift(newVideo);
     res.json(newVideo);
 })
 

@@ -7,7 +7,7 @@ export default class Uploadvideo extends React.Component{
     addVideo = (event) => {
         event.preventDefault();
         if(event.target.title.value !== '' && event.target.description.value !== ''){
-            axios.post('http://localhost:8080/video', { 
+            axios.post('http://localhost:8080/videos', { 
                 "title": event.target.title.value,
                 "description":event.target.description.value,
                })
