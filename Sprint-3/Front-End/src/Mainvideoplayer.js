@@ -17,8 +17,7 @@ class Mainvideoplayer extends Component{
                  this.setState(
                      {
                          playing : !this.state.playing
-                    });
-         
+                    });      
                 }
           else{
               status.pause();
@@ -26,9 +25,9 @@ class Mainvideoplayer extends Component{
                   {
                       playing : !this.state.playing
                 });
-            
           }
       }
+
       fullscreen = ()=>{
         const status = this.videoPlayer.current
           status.requestFullscreen();
